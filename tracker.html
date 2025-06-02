@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Web Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+	  text-align: right;
+	  direction: rtl;
+      background-image: url('https://thumbs.dreamstime.com/b/invest-your-health-healthy-lifestyle-concept-diet-fitness-get-fit-fitness-equipment-healthy-food-invest-your-158227197.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      background-color: #004d40;
+      padding: 0.5em;
+      text-align: center;
+      position: relative;
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem;
+
+    }
+
+    nav a:hover {
+      background-color: #555;
+
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	  text-align: center;
+    }
+    .tracker-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tracker-card {
+      width: 250px;
+      background: #fefefe;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .tracker-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tracker-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tracker-card h3 {
+      margin-top: 0.8rem;
+      color: #333;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  max-width: 150px;
+  height: auto;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+<img src="logo.jpg" alt="Logo" class="logo" />
+    <h1>Healthy Life Tracker</h1>
+    <p>בוא נשמור על אורח חיים בריא</p>
+  </header>
+
+  <nav>
+    <a href="home.html">דף הבית</a>
+    <a href="activity.html">רמת פעילות</a>
+    <a href="bmi.html">מחשבון BMI</a>
+	<a href="quotes.html">השראה יומית</a>
+    <a href="tracker.html">טבלת מעקב</a>
+  </nav>
+
+  <main>
+    <h2>🖨️הדפס תבניות משל עצמך</h2>
+    <p>הורד והדפס תבניות בחינם. שיעזרו לך לעקוב אחר המטרות והתהליך שלך, מצב רוח ועוד:)</p>
+
+    <div class="tracker-grid">
+			<div class="tracker-card">
+        <img src="https://i.pinimg.com/736x/ee/6d/78/ee6d78d29bd6c2d8192da709d3c9b2a6.jpg" alt="Challenge Sheet" />
+        <h3>Challenge Sheet</h3>
+        <a href="https://i.pinimg.com/736x/ee/6d/78/ee6d78d29bd6c2d8192da709d3c9b2a6.jpg" download class="download-btn">Download PDF</a>
+      </div>
+		<div class="tracker-card">
+        <img src="https://i.pinimg.com/736x/70/a2/0c/70a20ca3f535c824019107eb5741295f.jpg" alt="Monthly Workout Sheet" />
+        <h3>Monthly Workout Sheet</h3>
+        <a href="https://i.pinimg.com/736x/70/a2/0c/70a20ca3f535c824019107eb5741295f.jpg" download class="download-btn">Download PDF</a>
+      </div>
+      <div class="tracker-card">
+        <img src="https://i.pinimg.com/736x/ac/01/0f/ac010f7866b467968647bac0eb60010f.jpg" alt="Weekly Habit Tracker" />
+        <h3>weekly habit tracker</h3>
+        <a href="https://i.pinimg.com/736x/ac/01/0f/ac010f7866b467968647bac0eb60010f.jpg" download class="download-btn">Download PDF</a>
+      </div>
+      <div class="tracker-card">
+        <img src="https://i.pinimg.com/736x/8f/04/7c/8f047c8eeb99f7d46be3e7021cbac6df.jpg" alt="Mood Tracker" />
+        <h3>Mood Tracker</h3>
+        <a href="https://i.pinimg.com/736x/8f/04/7c/8f047c8eeb99f7d46be3e7021cbac6df.jpg" download class="download-btn">Download PDF</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  ~ Build good habits by using Healthy Life Tracker ~
+  </footer>
+
+<script>
+</script>
+</body>
+</html>

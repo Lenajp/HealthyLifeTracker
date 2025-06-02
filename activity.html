@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Web Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+	  text-align: right;
+	  direction: rtl;
+      background-image: url('https://thumbs.dreamstime.com/b/invest-your-health-healthy-lifestyle-concept-diet-fitness-get-fit-fitness-equipment-healthy-food-invest-your-158227197.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      background-color: #004d40;
+      padding: 0.5em;
+      text-align: center;
+      position: relative;
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem;
+
+    }
+
+    nav a:hover {
+      background-color: #555;
+
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+.image-cube {
+  position: fixed;
+  top: 50%;
+  left: 150px; 
+  transform: translateY(-50%);
+  width: 450px;
+  height: 250px;
+  background-color: deep blue;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-cube img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  max-width: 150px;
+  height: auto;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+<img src="logo.jpg" alt="Logo" class="logo" />
+    <h1>Healthy Life Tracker</h1>
+    <p>בוא נשמור על אורח חיים בריא</p>
+  </header>
+
+  <nav>
+    <a href="home.html">דף הבית</a>
+    <a href="activity.html">רמת פעילות</a>
+    <a href="bmi.html">מחשבון BMI</a>
+	<a href="quotes.html">השראה יומית</a>
+    <a href="tracker.html">טבלת מעקב</a>
+  </nav>
+<div class="image-cube">
+  <img src="https://static.vecteezy.com/system/resources/previews/005/093/329/non_2x/most-popular-sport-illustration-free-vector.jpg"תמונה בריאה" />
+</div>
+  <main>
+     <h2>רמת פעילות יומית</h2>
+      <label for="activitySelect">בחר/י את רמת הפעילות שלך:</label>
+      <select id="activitySelect">
+        <option value="low">מעט פעילות</option>
+        <option value="medium">פעילות בינונית</option>
+        <option value="high">פעילות גבוהה</option>
+      </select>
+      <button onclick="showSuggestions()">קבל המלצות</button>
+      <div id="suggestions" class="result"></div>
+  </main>
+
+  <footer>
+  ~ Build good habits by using Healthy Life Tracker ~
+  </footer>
+  
+  <script>
+    function showSuggestions() {
+      const activity = document.getElementById('activitySelect').value;
+      const suggestions = document.getElementById('suggestions');
+      if (activity === 'low') {
+        suggestions.innerHTML = `
+          <ul>
+            <li>התחל/י בהליכות קלות של 10 דקות ביום</li>
+            <li>שלב/י סרטוני אימון של מתחילים</li>
+            <li>שתה/י לפחות 2 ליטר מים</li>
+          </ul>`;
+      } else if (activity === 'medium') {
+        suggestions.innerHTML = `
+          <ul>
+            <li>מצוין! נסה/י לשלב 30 דקות של פעילות אירובית</li>
+            <li>שתה/י 2.5 ליטר מים ביום</li>
+            <li>שמור/י על תזונה מאוזנת ומזינה</li>
+          </ul>`;
+      } else {
+        suggestions.innerHTML = `
+          <ul>
+            <li>מעולה! המשך/י כך. שלב/י אימונים לחיזוק שרירים</li>
+            <li>אל תשכח/י לנוח ולהתאושש</li>
+            <li>שמור/י על תזונה מזינה</li>
+          </ul>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

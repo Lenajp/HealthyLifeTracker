@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Web Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+	  text-align: right;
+	  direction: rtl;
+      background-image: url('https://thumbs.dreamstime.com/b/invest-your-health-healthy-lifestyle-concept-diet-fitness-get-fit-fitness-equipment-healthy-food-invest-your-158227197.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      background-color: #004d40;
+      padding: 0.5em;
+      text-align: center;
+      position: relative;
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem;
+
+    }
+
+    nav a:hover {
+      background-color: #555;
+
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+header h1, header p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+    footer {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  max-width: 150px;
+  height: auto;
+}
+.image-cube {
+  position: fixed;
+  top: 50%;
+  left: 150px; 
+  transform: translateY(-50%);
+  width: 400px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-cube img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+<img src="logo.jpg" alt="Logo" class="logo" />
+    <h1>Healthy Life Tracker</h1>
+  <p>בוא נשמור על אורח חיים בריא</p>
+  </header>
+
+  <nav>
+    <a href="home.html">דף הבית</a>
+    <a href="activity.html">רמת פעילות</a>
+    <a href="bmi.html">מחשבון BMI</a>
+	<a href="quotes.html">השראה יומית</a>
+    <a href="tracker.html">טבלת מעקב</a>
+  </nav>
+<div class="image-cube">
+<img src="https://en.taylanakgun.com/wp-content/uploads/sites/3/2025/01/BODY-MASS-INDEX-TABLE.webp" alt="תמונה בריאה" />
+</div>
+
+  <main>
+      <h2>מחשבון BMI</h2>
+      <label for="weight">משקל (בק"ג):</label>
+      <input type="number" id="weight">
+      <label for="height">גובה (בס"מ):</label>
+<input type="number" id="height">
+      <button onclick="calculateBMI()">חשב</button>
+      <div id="bmiResult" class="result"></div>
+  </main>
+
+  <footer>
+   ~ Build good habits by using Healthy Life Tracker ~
+  </footer>
+<script>
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const heightCm = parseFloat(document.getElementById('height').value);
+
+      if (!weight || !heightCm || heightCm <= 0) {
+        document.getElementById('bmiResult').innerText = 'אנא הזינו ערכים חוקיים.';
+        return;
+      }
+
+      const heightM = heightCm / 100;
+      const bmi = weight / (heightM * heightM);
+      let message = `BMI שלך הוא ${bmi.toFixed(1)}. `;
+
+      if (bmi < 18.5) {
+        message += 'תת משקל – כדאי להתייעץ עם רופא או תזונאי.';
+      } else if (bmi < 25) {
+        message += 'משקל תקין. המשיכו כך!';
+      } else if (bmi < 30) {
+        message += 'עודף משקל – מומלץ להוסיף פעילות גופנית.';
+      } else {
+        message += 'השמנת יתר – כדאי לפנות לייעוץ מקצועי.';
+      }
+
+      document.getElementById('bmiResult').innerText = message;
+    }
+</script>
+</body>
+</html>
